@@ -16,10 +16,15 @@
       crossorigin="anonymous"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Shade&family=Monoton&family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,300&display=swap"
       rel="stylesheet"
     />
   </head>
+
   <body onscroll="headerAnimation()">
     <header>
       <div class="scroll-container">
@@ -59,14 +64,31 @@
         <button type="button">MENU</button>
       </div>
     </main>
+    <!-- spbre nos -->
 
-    <section class="sobre" style="margin: 4rem 2rem">
-      <div class="row align-items-center justify-content-around">
+    <section id="sobre" class="sobre" style="padding: 4rem 2rem">
+      <div
+        class="row align-items-center justify-content-around position-relative"
+      >
         <img
+          id="image"
           class="col-5 rounded-circle"
           src="/assets/segundaImagem.jpg"
-          alt=""
+          alt="asfasf"
         />
+        <div
+          class="col-5 position-absolute rounded-circle"
+          style="
+            background-color: black;
+            color: black;
+            z-index: -10;
+            height: 100%;
+            left: 2.3rem;
+            top: 0.6rem;
+          "
+        >
+          .
+        </div>
 
         <div class="col-6">
           <h2>Quem somos?</h2>
@@ -87,6 +109,257 @@
             voluptate ab totam.
           </p>
         </div>
+      </div>
+    </section>
+
+    <!-- video layout -->
+
+    <section
+      style="
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        height: 80vh;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 2rem;
+      "
+    >
+      <video src="/assets/video.mp4" autoplay loop width="100%"></video>
+
+      <div class="menu-container">
+        <span>MENU</span>
+
+        <h2 class="styled-h2">O QUE VOCÊ VAI PEDIR HOJE?</h2>
+
+        <p class="menu-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ab
+          similique nesciunt libero sint.
+        </p>
+        <div class="menu-action">
+          <a class="option-link" href="#"> VER OPÇÕES</a>
+          <span class="quenstion-menu">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="avaliacoes">
+      <div class="reviews-section">
+        <span>REVIEWS</span>
+        <h2 class="styled-h2">LOREM IPSUM</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
+          necessitatibus amet odio esse nobis, perferendis at! .
+        </p>
+      </div>
+
+      <div class="reviews-container">
+        <div style="width: 30%; margin: 1rem 1rem">
+          <div class="review">
+            <div class="stars">
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+            </div>
+
+            <p class="review-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
+              quis molestiae quia modi, fuga officia ullam accusantium doloribus
+              error fugit quam molestias, dignissimos assumenda est, omnis
+              consectetur cumque commodi quibusdam? Ullam dicta, aliquid
+              veritatis incidunt amet molestias ut et numquam.
+            </p>
+
+            <p class="author">João</p>
+
+            <span class="origin">Google</span>
+          </div>
+
+          <div class="review">
+            <div class="star">
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+            </div>
+
+            <p class="review-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
+              quis molestiae quia modi, fuga officia ullam accusantium doloribus
+              error fugit quam molestias, dignissimos assumenda est, omnis
+              consectetur cumque commodi quibusdam? Ullam dicta, aliquid
+              veritatis incidunt amet molestias ut et numquam. Voluptas sit
+              voluptatum quas error fugit quam molestias, dignissimos assumenda
+              est, omnis consectetur cumque commodi quibusdam? Ullam dicta,
+              aliquid veritatis incidunt amet molestias ut et numquam. Voluptas
+              sit voluptatum quas harum, nobis sunt culpa dignissimos! Vitae,
+              temporibus quod atque harum, nobis sunt culpa dignissimos! Vitae,
+              temporibus quod atque laudantium voluptatum sint. Hic incidunt
+              atque molestias.
+            </p>
+
+            <p class="author">João</p>
+
+            <span class="origin">Google</span>
+          </div>
+
+          <div class="review">
+            <div class="stars">
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+            </div>
+
+            <p class="review-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
+              quis molestiae quia modi, fuga officia ullam accusantium doloribus
+              error fugit quam molestias, dignissimos assumenda est, omnis
+              consectetur cumque commodi quibusdam!
+            </p>
+
+            <p class="author">João</p>
+
+            <span class="origin">Google</span>
+          </div>
+        </div>
+
+        <div style="width: 30%; margin: 1rem 1rem">
+          <div class="review">
+            <div class="stars">
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+            </div>
+
+            <p class="review-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
+              quis molestiae quia modi, fuga officia ullam accusantium doloribus
+              error fugit quam molestias.
+            </p>
+
+            <p class="author">João</p>
+
+            <span class="origin">Google</span>
+          </div>
+
+          <div class="review">
+            <div class="stars">
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+            </div>
+
+            <p class="review-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
+              quis molestiae quia modi, fuga officia ullam accusantium doloribus
+              error fugit quam molestias, dignissimos assumenda est, omnis
+              consectetur cumque commodi quibusdam? Ullam dicta, aliquid
+              veritatis incidunt amet molestias ut et numquam. Voluptas sit
+              voluptatum quas harum, nobis sunt culpa dignissimos! Vitae,
+              temporibus quod atque laudantium voluptatum sint. Hic incidunt
+              atque molestias.
+            </p>
+
+            <p class="author">João</p>
+
+            <span class="origin">Google</span>
+          </div>
+        </div>
+
+        <div style="width: 30%; margin: 1rem 1rem">
+          <div class="review">
+            <div class="stars">
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+            </div>
+
+            <p class="review-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
+              quis molestiae quia modi, fuga officia ullam accusantium doloribus
+              error fugit quam molestias, dignissimos assumenda est, omnis
+              consectetur cumque commodi quibusdam? Ullam dicta, aliquid
+              veritatis incidunt amet molestias ut et numquam. Voluptas sit
+              voluptatum quas harum, nobis sunt culpa dignissimos! Vitae,
+              temporibus quod atque laudantium voluptatum sint. Hic incidunt
+              atque molestias.
+            </p>
+
+            <p class="author">João</p>
+
+            <span class="origin">Google</span>
+          </div>
+          <div class="review">
+            <div class="stars">
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+              <box-icon type="solid" name="star"></box-icon>
+            </div>
+
+            <p class="review-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
+              quis molestiae quia modi, fuga officia ullam accusantium doloribus
+              error fugit quam molestias, dignissimos assumenda est, omnis
+              consectetur cumque commodi quibusdam? Ullam dicta, aliquid
+              veritatis incidunt amet molestias ut et numquam. Voluptas sit
+              voluptatum quas
+            </p>
+
+            <p class="author">João</p>
+
+            <span class="origin">Google</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="menu-informations">
+      <span>MENU</span>
+      <h2 class="styled-h2-pratos">PRATOS DELICIOSOS</h2>
+      <p class="menu-description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+        impedit, soluta velit omnis, esse deleniti veritatis, dolor asperiores
+        recusandae sed repudiandae beatae quo nesciunt nostrum hic perferendis
+        expedita aspernatur laborum? Corrupti asperiores mollitia error laborum
+        doloribus harum laboriosam adipisci eius sequi.
+      </p>
+
+      <div class="d-flex flex-row justify-content-around w-100">
+        <button class="botoes-menus" type="button">
+          <box-icon class="icones-botoes-menu" size="sm" name="star"></box-icon>
+          <p>Pães</p>
+        </button>
+        <button class="botoes-menus" type="button">
+          <box-icon class="icones-botoes-menu" size="sm" name="star"></box-icon>
+          <p>Saladas</p>
+        </button>
+        <button class="botoes-menus" type="button">
+          <box-icon class="icones-botoes-menu" size="sm" name="star"></box-icon>
+          <p>Peixe</p>
+        </button>
+        <button class="botoes-menus" type="button">
+          <box-icon class="icones-botoes-menu" size="sm" name="star"></box-icon>
+          <p>Carnes</p>
+        </button>
+        <button class="botoes-menus" type="button">
+          <box-icon class="icones-botoes-menu" size="sm" name="star"></box-icon>
+          <p>Sobremesas</p>
+        </button>
       </div>
     </section>
     <script

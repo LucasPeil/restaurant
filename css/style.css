@@ -2,6 +2,9 @@
   padding: 0;
   margin: 0;
 }
+p {
+  margin: 0px !important;
+}
 
 .scroll-container {
   position: fixed;
@@ -10,7 +13,7 @@
   height: 6rem;
   transform: translateY(-100%);
   background-color: white;
-  z-index: 0;
+  z-index: 1;
   transition: all 0.4s ease-in-out;
 }
 
@@ -35,6 +38,7 @@ nav {
   width: 100%;
   height: 6rem;
   overflow: hidden;
+  z-index: 1;
 }
 .scroll-container-title {
   color: black;
@@ -95,6 +99,10 @@ span {
   font-size: 2rem;
   color: white;
 }
+.menu-action span {
+  font-size: 1.1rem !important;
+  font-weight: 400 !important;
+}
 
 .icon-label {
   margin-bottom: 2.5rem;
@@ -107,8 +115,10 @@ span {
 .icon-label p {
   width: 8rem;
 }
+.option-link,
 .cover-subcontainer button {
   background-color: black;
+  border: 1px solid white;
   color: white;
   font-weight: bold;
   font-size: 1.2rem;
@@ -137,4 +147,141 @@ span {
   font-weight: bold;
   font-style: italic;
   margin-bottom: 2rem;
+}
+video {
+  position: absolute;
+  transform: translateY(-20%);
+  z-index: -1;
+  filter: brightness(30%);
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto auto;
+}
+.menu-container span {
+  font-size: 20px;
+  font-weight: bold;
+}
+.menu-container p {
+  color: white;
+}
+.styled-h2,
+.styled-h2-pratos {
+  font-style: italic;
+  font-size: 3.8rem;
+  font-weight: bold;
+  color: white;
+  margin: 2rem 0;
+  /*  font-family: "Bebas Neue", sans-serif; */
+  font-family: "Bungee Shade", cursive;
+}
+.styled-h2-pratos {
+  color: black;
+}
+
+.menu-description {
+  width: 80%;
+  font-size: 18px;
+}
+.option-link {
+  background: transparent;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  font-size: 15px;
+  border: 1px solid white;
+  transition: all 0.3s ease-in-out;
+}
+.option-link:hover {
+  background: black;
+  transform: scale(105%);
+}
+.menu-action {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.reviews-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+}
+.reviews-section p {
+  width: 50%;
+  text-align: center;
+}
+.reviews-section span {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.reviews-section .styled-h2 {
+  color: black;
+}
+.reviews-container {
+  margin: 0 4rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  align-items: start;
+}
+.review {
+  border: 1px solid black;
+  width: 100%;
+  margin-top: 1.3rem;
+  padding: 3rem 2rem 1rem;
+  height: auto;
+}
+
+.author {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Bebas Neue", sans-serif;
+}
+.menu-informations {
+  margin: 4rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-informations span {
+  color: black;
+  font-size: 20px;
+  margin-top: 2rem;
+}
+
+.menu-description {
+  width: 70%;
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 2rem;
+}
+.botoes-menus {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  width: 15%;
+  transition: all 0.3s ease-in-out;
+}
+.icones-botoes-menu {
+  z-index: 100000;
+}
+.botoes-menus p {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 30px;
+  padding-left: 0.5rem;
 }
