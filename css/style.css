@@ -2,6 +2,9 @@
   padding: 0;
   margin: 0;
 }
+html {
+  overflow-x: hidden;
+}
 p {
   margin: 0px !important;
 }
@@ -64,6 +67,7 @@ ul {
   padding: 0 0.6rem;
   color: white;
 }
+
 nav button {
   background-color: black;
   color: white;
@@ -275,7 +279,7 @@ video {
   justify-content: center;
   background-color: transparent;
   width: 15%;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .icones-botoes-menu {
   z-index: 100000;
@@ -284,4 +288,35 @@ video {
   font-family: "Bebas Neue", sans-serif;
   font-size: 30px;
   padding-left: 0.5rem;
+}
+.preco {
+  font-family: "Shrikhand", "cursive";
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.nome-prato {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+
+.descricao-prato {
+  font-size: 16px;
+  font-style: italic;
+}
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+#lista-menu {
+  transition: all 0.5s ease-in-out;
 }

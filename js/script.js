@@ -41,29 +41,54 @@ function headerAnimation() {
 }
 
 const image = document.querySelector(".image");
-console.log(image);
 
-// efeitos dos botoes do menu
+// efeitos dos botoes do menu e da transição das opções de menu
+const listaMenu = document.querySelector("#lista-menu");
+const menuTransicao = document.querySelector(".menu-transicao");
+
 const botoesMenu = document.querySelectorAll(".botoes-menus");
 const estrelasMenu = document.querySelectorAll(".icones-botoes-menu");
-console.log(botoesMenu);
+const buttonLabel = document.querySelectorAll(".botao-label");
 const buttonClicked = [];
 const starClicked = [];
+
 botoesMenu.forEach((botao, index) => {
   botao.addEventListener("click", (e) => {
+    listaMenu.style.opacity = 0;
+    listaMenu.style.transform = "translateX(-50%)";
+
+    setTimeout(() => {
+      listaMenu.innerHTML = `<object width="100%" height="800" type="text/html" data="../${buttonLabel[index].dataset.label}.html"</object>`;
+      setTimeout(() => {
+        console.log("100");
+        listaMenu.style.transform = "translateX(0%)";
+      }, 120);
+      console.log("350");
+      listaMenu.style.opacity = 1;
+      listaMenu.style.transform = "translateX(800%)";
+    }, 450);
+
     buttonClicked.push(botao);
     starClicked.push(estrelasMenu[index]);
     botao.style.backgroundColor = "#F9E991";
-    estrelasMenu[index].setAttribute("type", "solid");
     if (buttonClicked.length > 1 && starClicked.length > 1) {
       buttonClicked[0].style.backgroundColor = "transparent";
-      starClicked[0].setAttribute("name", "star-half");
-      starClicked[0].setAttribute("type", "solid");
       starClicked.shift();
       buttonClicked.shift();
     }
+  });
+});
 
-    /*  if (buttonClicked.indexOf(botao) == -1) {
+estrelasMenu.forEach((icone) => {
+  icone.setAttribute("type", "");
+});
+
+/*  estrelasMenu[index].setAttribute("type", "solid"); */
+
+/* starClicked[0].setAttribute("name", "star-half");
+      starClicked[0].setAttribute("type", "solid"); */
+
+/*  if (buttonClicked.indexOf(botao) == -1) {
       botao.style.backgroundColor = "#F9E991";
       estrelasMenu[index].setAttribute("type", "solid");
       buttonClicked.push(botao);
@@ -72,9 +97,3 @@ botoesMenu.forEach((botao, index) => {
       estrelasMenu[index].setAttribute("type", "");
       buttonClicked.pop(botao);
     } */
-  });
-});
-
-estrelasMenu.forEach((icone) => {
-  icone.setAttribute("type", "");
-});
