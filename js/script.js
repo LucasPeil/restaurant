@@ -29,7 +29,7 @@ function headerAnimation() {
 
   if (window.scrollY > 100) {
     scrollContainer.style.transform = `translateY(0%)`;
-    scrollContainer.style.backgroundColor = "white !important";
+    scrollContainer.style.backgroundColor = "#fefcf2 !important";
 
     Array.from(navLinks).forEach((link) => (link.style.color = "black"));
     /*  wpIcon.setAttribute("color", "rgba(0,0,0,1)");
@@ -61,12 +61,13 @@ botoesMenu.forEach((botao, index) => {
       listaMenu.innerHTML = `<object width="100%" height="800" type="text/html" data="../${buttonLabel[index].dataset.label}.html"</object>`;
       setTimeout(() => {
         console.log("100");
+        listaMenu.style.opacity = 1;
         listaMenu.style.transform = "translateX(0%)";
-      }, 120);
+      }, 150);
       console.log("350");
-      listaMenu.style.opacity = 1;
+      listaMenu.style.opacity = 0;
       listaMenu.style.transform = "translateX(800%)";
-    }, 450);
+    }, 400);
 
     buttonClicked.push(botao);
     starClicked.push(estrelasMenu[index]);
@@ -82,6 +83,33 @@ botoesMenu.forEach((botao, index) => {
 estrelasMenu.forEach((icone) => {
   icone.setAttribute("type", "");
 });
+
+
+// PERGUNTAS FREQUENTES
+
+const closeIcons = document.querySelectorAll(".close-icon") 
+const answers = document.querySelectorAll(".answers") 
+
+const iconClicked=[]
+closeIcons.forEach((icon, index) => {
+  icon.addEventListener("click", (e) => {
+    icon.classList.toggle("close-icon-click")
+    
+    answers[index].classList.toggle("answers-click")
+    setTimeout(() => {
+      answers[index].classList.toggle("answers-hide")
+    }, 500);
+  })
+})
+
+
+const coverSubcontainer = document.querySelector(".cover-subcontainer ")
+
+setTimeout(() => {
+  coverSubcontainer.style.height = "100vh";
+  coverSubcontainer.style.opacity = 1;
+}, 300);
+
 
 /*  estrelasMenu[index].setAttribute("type", "solid"); */
 

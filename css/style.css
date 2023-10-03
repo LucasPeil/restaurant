@@ -5,6 +5,9 @@
 html {
   overflow-x: hidden;
 }
+body{
+background-color: #fefcf2 !important;
+}
 p {
   margin: 0px !important;
 }
@@ -42,6 +45,7 @@ nav {
   height: 6rem;
   overflow: hidden;
   z-index: 1;
+  font-size: 22px;
 }
 .scroll-container-title {
   color: black;
@@ -68,11 +72,12 @@ ul {
   color: white;
 }
 
-nav button {
+nav button, Form button {
   background-color: black;
   color: white;
   padding: 1rem 1.5rem;
   font-weight: bold;
+ 
 }
 .nav-links {
   color: white;
@@ -85,17 +90,28 @@ main {
 .cover-subcontainer {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 150vh;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+
 }
 .cover-subcontainer h1 {
   color: white;
-  font-size: 3rem;
+  font-size: 5rem;
   margin-bottom: 1rem;
 }
 .cover-subcontainer p {
   color: white;
+  font-size: 2rem;
+ 
+}
+.cover-subcontainer span{
+   font-size: 4rem;
+}
+.cover-subcontainer button{
+  width: 15%;
 }
 span {
   color: white;
@@ -103,18 +119,24 @@ span {
   font-size: 2rem;
   color: white;
 }
+
+.menu{
+  background-color: #fffae4;
+}
 .menu-action span {
   font-size: 1.1rem !important;
   font-weight: 400 !important;
 }
 
 .icon-label {
+  width: 30%;
   margin-bottom: 2.5rem;
   padding: 0 2.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
 }
 .icon-label p {
   width: 8rem;
@@ -174,7 +196,9 @@ video {
   color: white;
 }
 .styled-h2,
-.styled-h2-pratos {
+.styled-h2-pratos,
+.styled-h2-questions,
+.styled-h2-contato {
   font-style: italic;
   font-size: 3.8rem;
   font-weight: bold;
@@ -183,7 +207,7 @@ video {
   /*  font-family: "Bebas Neue", sans-serif; */
   font-family: "Bungee Shade", cursive;
 }
-.styled-h2-pratos {
+.styled-h2-pratos, .styled-h2-questions, .styled-h2-contato {
   color: black;
 }
 
@@ -252,8 +276,8 @@ video {
   font-family: "Bebas Neue", sans-serif;
 }
 .menu-informations {
-  margin: 4rem;
-
+  padding: 4rem;
+  background-color: #fffae4;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -320,3 +344,149 @@ video {
 #lista-menu {
   transition: all 0.5s ease-in-out;
 }
+
+.questions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:4rem;
+  height: fit-content;
+
+}
+
+.questions span{
+  color: black;
+  font-size: 18px;
+}
+.question-block p{
+  border-bottom: 1px solid black;
+ 
+}
+.question-label{
+  display: flex;
+  justify-content: space-between;
+
+  padding: 2rem;
+}
+.question-label span{
+  font-size: 1.5rem;
+}
+
+.questions-container{
+  margin-top: 2rem;
+  width: 50%;
+}
+.close-icon{
+  cursor: pointer;
+  transform: rotate(135deg);
+  transition: all 0.3s ease-in-out;
+
+
+}
+.close-icon-click{
+  cursor: pointer;
+  transform: rotate(90deg);
+  transition: all 0.3s ease-in-out;
+
+}
+.answers{
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+.answers-click{
+  transform: translateY(-2rem);
+ 
+  transition: all 0.3s ease-in-out;
+
+}
+.questions button{
+  background-color: transparent;
+}
+.accordion-item{
+  border-radius: 0px !important;
+  border: none !important;
+  border-bottom: 1px solid black !important;
+  padding-bottom: 1rem;
+  background-color: #fffef7 !important;
+}
+.accordion-button{
+  background-color: #fffef7 !important;
+  border: none !important;
+  box-shadow: none;
+  
+
+}
+.accordion-button:not(.collapsed) {
+  box-shadow: none !important;
+}
+.accordion-button:focus{
+  box-shadow: none !important;
+}
+.accordion-button::after {
+  
+  background-size: 30px !important;
+
+  transition: all 0.7s ease !important;
+  
+  width: 30px !important;
+  height: 30px !important;
+ 
+} 
+#contato{
+  padding-top: 1rem;
+  margin-top: 5rem;
+  margin-bottom: 6rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  box-sizing: border-box;
+  background-color: #fffae4;
+}
+
+#contato span{
+  color: black;
+  font-weight: 300;
+  font-size: 18px;
+  
+}
+.contato-info{
+ margin-bottom: 1.5rem;
+}
+.contato-info p{
+  font-weight: bold;
+  font-size: 20px;
+  
+ }
+.contato-info span{
+  color: black;
+  font-weight: 500 !important;
+  font-size: 18px;
+}
+
+Form label{
+  font-size: 18px;
+  font-weight: 300;
+}
+
+Form input[type="text"],Form input[type="email"]{
+  border-radius: 0.4rem;
+  height: 2.5rem;
+  width: 20rem;
+}
+
+Form textarea{
+  border-radius: 0.4rem;
+ border: 2px solid black;
+}
+
+Form input[type="checkbox"]{
+width: 18px;
+height: 18px;
+accent-color: black;
+}
+Form button{
+  width: 40%;
+  font-size: 25px;
+  padding: 0.8rem 1.2rem;
+}
+
