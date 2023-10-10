@@ -2,19 +2,14 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Restaurante</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style.scss" />
     <!--   <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+    
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Shade&family=Monoton&family=Shrikhand&display=swap"
       rel="stylesheet"
@@ -26,7 +21,29 @@
   </head>
 
   <body onscroll="headerAnimation()">
-    <header>
+    <header >
+      <!-- Modal -->
+      <div class="modal-menu">
+        <div>
+          <h2 class="drawer-title">LA BARRACA</h2>
+          <nav id="drawer-navigation">
+            <ul class="drawer-nav-items">
+              <li onclick="closeMenuModal()"><a class="drawer-nav-links fs-4 d-block " href="#sobre">SOBRE </a></li>
+              <li onclick="closeMenuModal()"><a class="drawer-nav-links fs-4 d-block" href="#menu">MENU </a></li>
+              <li onclick="closeMenuModal()"><a class="drawer-nav-links fs-4 d-block" href="#avaliacoes"> AVALIAÇÕES</a></li>
+              <li onclick="closeMenuModal()"><a class="drawer-nav-links fs-4 d-block" href="#contato"> CONTATO</a></li>
+            </ul>
+            <div class="drawer-nav-button">    
+              
+              <button type="button">RESERVAR</button>
+            </div>
+          </nav>
+        </div>
+       
+      </div>
+      <div onclick="closeMenuModal()" id="overlay">
+      
+      </div>
       <div class="scroll-container">
         <p class="scroll-container-title">LE RESTAURANT</p>
       </div>
@@ -37,29 +54,21 @@
           <li><a class="nav-links" href="#avaliacoes"> AVALIAÇÕES</a></li>
           <li><a class="nav-links" href="#contato"> CONTATO</a></li>
         </ul>
-        <div style="display: flex; align-items: center; gap: 0.5rem">
-          <!-- <a href="">
-            <box-icon
-              id="wp-icon"
-              type="logo"
-              name="whatsapp"
-              size="lg"
-              color="rgba(255, 255, 255, 0)"
-            ></box-icon>
-          </a> -->
+        <div class="nav-button">    
+          <box-icon onclick="openMenuModal()" id="bar-button" type="button" name='menu' size="lg"></box-icon> 
           <button type="button">RESERVAR</button>
         </div>
       </nav>
     </header>
     <!-- COVER -->
-    <main class="">
+    <main >
       <div class="cover-subcontainer">
         <span>LE</span>
         <h1>RESTAURANT</h1>
-        <div class="icon-label">
-          <p>SUSHI</p>
+        <div class="icon-label d-flex justify-content-around">
+          <p class="text-end">SUSHI</p>
           <img src="/assets/logo.png" width="150px" alt="" />
-          <p style="text-align: end">GOURMET</p>
+          <p >GOURMET</p>
         </div>
         <button type="button">MENU</button>
       </div>
@@ -72,25 +81,13 @@
       >
         <img
           id="image"
-          class="col-5 rounded-circle"
-          src="/assets/segundaImagem.jpg"
+          class="col-sm-6 col-xl-5 mb-sm-5"
+          src="/assets/segunda-imagem.png"
           alt="asfasf"
         />
-        <div
-          class="col-5 position-absolute rounded-circle"
-          style="
-            background-color: black;
-            color: black;
-            z-index: -10;
-            height: 100%;
-            left: 2.3rem;
-            top: 0.6rem;
-          "
-        >
-          .
-        </div>
+     
 
-        <div class="col-6">
+        <div class="col-sm-12 col-xl-7 ">
           <h2>Quem somos?</h2>
           <p class="sobre-subtitle">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia
@@ -114,23 +111,15 @@
 
     <!-- video layout -->
 
-    <section
-      style="
-        display: flex;
-        align-items: start;
-        justify-content: center;
-        height: 80vh;
-        overflow: hidden;
-        position: relative;
-        margin-bottom: 2rem;
-      "
+    <section id="video-section"
+      
     >
-      <video src="/assets/video.mp4" autoplay loop width="100%"></video>
+      <video src="/assets/video.mp4" autoplay loop ></video>
 
       <div class="menu-container">
         <span>MENU</span>
 
-        <h2 class="styled-h2">O QUE VOCÊ VAI PEDIR HOJE?</h2>
+        <h2 class="styled-h2-video">O QUE VOCÊ VAI PEDIR HOJE?</h2>
 
         <p class="menu-description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ab
@@ -139,7 +128,7 @@
         <div class="menu-action">
           <a class="option-link" href="#"> VER OPÇÕES</a>
           <span class="quenstion-menu">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.</span
+            Lorem ipsum dolor sit amet consectetur adipisicing elit?</span
           >
         </div>
       </div>
@@ -149,14 +138,14 @@
       <div class="reviews-section">
         <span>REVIEWS</span>
         <h2 class="styled-h2">LOREM IPSUM</h2>
-        <p>
+        <p class="W-100">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
           necessitatibus amet odio esse nobis, perferendis at! .
         </p>
       </div>
 
       <div class="reviews-container">
-        <div style="width: 30%; margin: 1rem 1rem">
+        <div class="review-group" >
           <div class="review">
             <div class="stars">
               <box-icon type="solid" name="star"></box-icon>
@@ -230,7 +219,7 @@
           </div>
         </div>
 
-        <div style="width: 30%; margin: 1rem 1rem">
+        <div class="review-group" >
           <div class="review">
             <div class="stars">
               <box-icon type="solid" name="star"></box-icon>
@@ -277,7 +266,7 @@
           </div>
         </div>
 
-        <div style="width: 30%; margin: 1rem 1rem">
+        <div class="review-group" >
           <div class="review">
             <div class="stars">
               <box-icon type="solid" name="star"></box-icon>
@@ -339,7 +328,7 @@
         doloribus harum laboriosam adipisci eius sequi.
       </p>
 
-      <div class="d-flex flex-row justify-content-around w-100">
+      <div class="d-flex flex-column align-items-center flex-md-row flex-lg-row justify-content-around w-100 ">
         <button class="botoes-menus" type="button">
           <box-icon size="sm" type="solid" name="star-half"></box-icon>
           <p class="botao-label" data-label="paes">Pães</p>
@@ -356,91 +345,91 @@
           <box-icon size="sm" type="solid" name="star-half"></box-icon>
           <p class="botao-label" data-label="carnes">Carnes</p>
         </button>
-        <button class="botoes-menus" type="button">
+        <button class="botoes-menus" style="min-width: 170px;" type="button">
           <box-icon size="sm" type="solid" name="star-half"></box-icon>
           <p class="botao-label" data-label="sobremesas">Sobremesas</p>
         </button>
       </div>
 
-      <div id="lista-menu" class="container-fluid mt-4">
+      <div id="lista-menu" class="container-fluid mt-4 px-4">
         <div class="menu-transicao">
-          <div class="row align-items-center justify-content-around my-5">
-            <div class="col-4">
+          <div class="row row-cols-3 align-items-center justify-content-around my-5">
+            <div class=" col-sm-4 col-md-4 ">
               <h4 class="d-block nome-prato">Lorem Ipsum Lorem Ipsum</h4>
               <p class="descricao-prato">
                 Lorem iasiofjaksjfhaksjhkabbmnas safkasbf asbf
               </p>
             </div>
-            <div class="col-7" style="border: 1px solid black"></div>
-            <p class="col-1 preco">8.5</p>
+            <div class="col-sm-6 col-md-7" style="border: 1px solid black"></div>
+            <p class="col-sm-1 col-md-1 preco">8.5</p>
           </div>
 
-          <div class="row align-items-center justify-content-around my-5">
-            <div class="col-4">
+          <div class="row row-cols-3 align-items-center justify-content-around my-5">
+            <div class=" col-sm-4 col-md-4 ">
               <h4 class="d-block nome-prato">Lorem Ipsum Lorem Ipsum</h4>
               <p class="descricao-prato">
                 Lorem iasiofjaksjfhaksjhkabbmnas safkasbf asbf
               </p>
             </div>
-            <div class="col-7" style="border: 1px solid black"></div>
-            <p class="col-1 preco">8.5</p>
+            <div class="col-sm-6 col-md-7" style="border: 1px solid black"></div>
+            <p class="col-sm-1 col-md-1 preco">8.5</p>
           </div>
 
-          <div class="row align-items-center justify-content-around my-5">
-            <div class="col-4">
+          <div class="row row-cols-3 align-items-center justify-content-around my-5">
+            <div class=" col-sm-4 col-md-4 ">
               <h4 class="d-block nome-prato">Lorem Ipsum Lorem Ipsum</h4>
               <p class="descricao-prato">
                 Lorem iasiofjaksjfhaksjhkabbmnas safkasbf asbf
               </p>
             </div>
-            <div class="col-7" style="border: 1px solid black"></div>
-            <p class="col-1 preco">8.5</p>
+            <div class="col-sm-6 col-md-7" style="border: 1px solid black"></div>
+            <p class="col-sm-1 col-md-1 preco">8.5</p>
           </div>
 
-          <div class="row align-items-center justify-content-around my-5">
-            <div class="col-4">
+          <div class="row row-cols-3 align-items-center justify-content-around my-5">
+            <div class=" col-sm-4 col-md-4    ">
               <h4 class="d-block nome-prato">Lorem Ipsum Lorem Ipsum</h4>
               <p class="descricao-prato">
                 Lorem iasiofjaksjfhaksjhkabbmnas safkasbf asbf
               </p>
             </div>
-            <div class="col-7" style="border: 1px solid black"></div>
-            <p class="col-1 preco">8.5</p>
+            <div class="col-sm-6 col-md-7" style="border: 1px solid black"></div>
+            <p class="col-sm-1 col-md-1 preco">8.5</p>
           </div>
 
-          <div class="row align-items-center justify-content-around my-5">
-            <div class="col-4">
+          <div class="row row-cols-3 align-items-center justify-content-around my-5">
+            <div class=" col-sm-4 col-md-4    ">
               <h4 class="d-block nome-prato">Lorem Ipsum Lorem Ipsum</h4>
               <p class="descricao-prato">
                 Lorem iasiofjaksjfhaksjhkabbmnas safkasbf asbf
               </p>
             </div>
-            <div class="col-7" style="border: 1px solid black"></div>
-            <p class="col-1 preco">8.5</p>
+            <div class="col-sm-6 col-md-7" style="border: 1px solid black"></div>
+            <p class="col-sm-1 col-md-1 preco">8.5</p>
           </div>
 
-          <div class="row align-items-center justify-content-around my-5">
-            <div class="col-4">
+          <div class="row row-cols-3 align-items-center justify-content-around my-5">
+            <div class=" col-sm-4 col-md-4    ">
               <h4 class="d-block nome-prato">Lorem Ipsum Lorem Ipsum</h4>
               <p class="descricao-prato">
                 Lorem iasiofjaksjfhaksjhkabbmnas safkasbf asbf
               </p>
             </div>
-            <div class="col-7" style="border: 1px solid black"></div>
-            <p class="col-1 preco">8.5</p>
+            <div class="col-sm-6 col-md-7" style="border: 1px solid black"></div>
+            <p class="col-sm-1 col-md-1 preco">8.5</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="questions">
+    <section class="questions ">
       <h2 class="styled-h2-questions">
         PERGUNTAS FREQUENTES
       </h2>
       <span>Você pergunta, a gente responde!</span>
 
-      <div class=" accordion questions-container"  id="questionAccordion">
-        <div style=" padding-bottom: 2rem;">
+      <div class=" accordion questions-container" id="questionAccordion">
+        <div class="pb-5">
           <div class="accordion-item">
             <div class=" accordion-header" >
               
@@ -449,7 +438,7 @@
               </button>
             </div>
             <div id="question1" class="accordion-collapse collapse " data-bs-parent="#questionAccordion">
-              <p >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit perspiciatis officiis vel laborum eum soluta necessitatibus dolore tempore veniam nisi, iure aspernatur odio, iusto quisquam, quidem ut sapiente voluptatem beatae.
+              <p class="p-3" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit perspiciatis officiis vel laborum eum soluta necessitatibus dolore tempore veniam nisi, iure aspernatur odio, iusto quisquam, quidem ut sapiente voluptatem beatae.
                 Saepe deleniti dignissimos temporibus alias fugiat nemo repellat quisquam corrupti, accusamus nisi culpa, cupiditate corporis reprehenderit mollitia voluptas laboriosam dolorem assumenda accusantium, recusandae soluta doloremque possimus! Aspernatur assumenda corrupti quis?
                 Ex, magni. Animi ipsam fugiat sapiente iste obcaecati doloremque laboriosam alias at repellat corporis, consequatur veritatis vitae laborum, accusamus numquam odio amet nobis? Necessitatibus alias ut cumque voluptatibus ratione ipsum.
                 Sed nulla sit, obcaecati ab suscipit, voluptatum laudantium, sequi quos nobis beatae impedit. Dolorum nesciunt quasi cupiditate voluptas suscipit, pariatur blanditiis, illum reprehenderit, harum cum sunt! Nemo quas harum similique!</p>
@@ -457,7 +446,7 @@
           </div>
           
         </div>
-        <div style=" padding-bottom: 2rem;">
+        <div class="pb-5">
           <div class="accordion-item">
             <div class=" accordion-header" >
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question2" aria-expanded="true" aria-controls="question2">
@@ -465,7 +454,7 @@
               </button>
             </div>
             <div id="question2" class="accordion-collapse collapse" data-bs-parent="#questionAccordion">
-              <p >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit perspiciatis officiis vel laborum eum soluta necessitatibus dolore tempore veniam nisi, iure aspernatur odio, iusto quisquam, quidem ut sapiente voluptatem beatae.
+              <p class="p-3" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit perspiciatis officiis vel laborum eum soluta necessitatibus dolore tempore veniam nisi, iure aspernatur odio, iusto quisquam, quidem ut sapiente voluptatem beatae.
                 Saepe deleniti dignissimos temporibus alias fugiat nemo repellat quisquam corrupti, accusamus nisi culpa, cupiditate corporis reprehenderit mollitia voluptas laboriosam dolorem assumenda accusantium, recusandae soluta doloremque possimus! Aspernatur assumenda corrupti quis?
                 Ex, magni. Animi ipsam fugiat sapiente iste obcaecati doloremque laboriosam alias at repellat corporis, consequatur veritatis vitae laborum, accusamus numquam odio amet nobis? Necessitatibus alias ut cumque voluptatibus ratione ipsum.
                 Sed nulla sit, obcaecati ab suscipit, voluptatum laudantium, sequi quos nobis beatae impedit. Dolorum nesciunt quasi cupiditate voluptas suscipit, pariatur blanditiis, illum reprehenderit, harum cum sunt! Nemo quas harum similique!</p>
@@ -473,7 +462,7 @@
           </div>
           
         </div>
-        <div style=" padding-bottom: 2rem;">
+        <div class="pb-5">
           <div class="accordion-item">
             <div class=" accordion-header" >
               
@@ -482,7 +471,7 @@
               </button>
             </div>
             <div id="question3" class="accordion-collapse collapse" data-bs-parent="#questionAccordion">
-              <p >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit perspiciatis officiis vel laborum eum soluta necessitatibus dolore tempore veniam nisi, iure aspernatur odio, iusto quisquam, quidem ut sapiente voluptatem beatae.
+              <p class="p-3" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit perspiciatis officiis vel laborum eum soluta necessitatibus dolore tempore veniam nisi, iure aspernatur odio, iusto quisquam, quidem ut sapiente voluptatem beatae.
                 Saepe deleniti dignissimos temporibus alias fugiat nemo repellat quisquam corrupti, accusamus nisi culpa, cupiditate corporis reprehenderit mollitia voluptas laboriosam dolorem assumenda accusantium, recusandae soluta doloremque possimus! Aspernatur assumenda corrupti quis?
                 Ex, magni. Animi ipsam fugiat sapiente iste obcaecati doloremque laboriosam alias at repellat corporis, consequatur veritatis vitae laborum, accusamus numquam odio amet nobis? Necessitatibus alias ut cumque voluptatibus ratione ipsum.
                 Sed nulla sit, obcaecati ab suscipit, voluptatum laudantium, sequi quos nobis beatae impedit. Dolorum nesciunt quasi cupiditate voluptas suscipit, pariatur blanditiis, illum reprehenderit, harum cum sunt! Nemo quas harum similique!</p>
@@ -490,7 +479,7 @@
           </div>
           
         </div>
-        <div style=" padding-bottom: 2rem;">
+        <div class="pb-5">
           <div class="accordion-item">
             <div class=" accordion-header" >
               
@@ -499,7 +488,7 @@
               </button>
             </div>
             <div id="question4" class="accordion-collapse collapse" data-bs-parent="#questionAccordion">
-              <p >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit perspiciatis officiis vel laborum eum soluta necessitatibus dolore tempore veniam nisi, iure aspernatur odio, iusto quisquam, quidem ut sapiente voluptatem beatae.
+              <p class="p-3" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit perspiciatis officiis vel laborum eum soluta necessitatibus dolore tempore veniam nisi, iure aspernatur odio, iusto quisquam, quidem ut sapiente voluptatem beatae.
                 Saepe deleniti dignissimos temporibus alias fugiat nemo repellat quisquam corrupti, accusamus nisi culpa, cupiditate corporis reprehenderit mollitia voluptas laboriosam dolorem assumenda accusantium, recusandae soluta doloremque possimus! Aspernatur assumenda corrupti quis?
                 Ex, magni. Animi ipsam fugiat sapiente iste obcaecati doloremque laboriosam alias at repellat corporis, consequatur veritatis vitae laborum, accusamus numquam odio amet nobis? Necessitatibus alias ut cumque voluptatibus ratione ipsum.
                 Sed nulla sit, obcaecati ab suscipit, voluptatum laudantium, sequi quos nobis beatae impedit. Dolorum nesciunt quasi cupiditate voluptas suscipit, pariatur blanditiis, illum reprehenderit, harum cum sunt! Nemo quas harum similique!</p>
@@ -520,13 +509,13 @@
         <br>
         <small>preencha todos os campos</small>
     </div>
-      <div class=" row justify-content-around align-items-start ">
-        <div class="col-6 contato-form">
+      <div class="  row justify-content-around align-items-start ">
+        <div class="col-sm-12 col-md-7 contato-form">
           
   
           <div class="d-flex flex-column">
-            <Form class=""  action="#">
-              <div class="mt-4 mb-2 d-flex flex-row  ">
+            <Form class="mb-5"  action="#">
+              <div class="mt-4 mb-2 d-flex  ">
                 <div class="identification-inputs">
                   <label class="d-block" for="nome">Nome</label>
                   <input type="text" name="nome" id="nome">
@@ -537,7 +526,7 @@
                 </div>
               </div> 
                
-                <div class="mt-4 mb-2 d-flex flex-row ">
+                <div class="mt-4 mb-2 d-flex ">
                   <div class="identification-inputs">
                     <label class="d-block" for="email" >Email</label>
                     <input type="email" name="email" id="email">
@@ -549,7 +538,7 @@
                 </div>
                 <label class="mt-4" for="message">MENSAGEM</label>
                 <div>
-                  <textarea name="" id="message" cols="67" rows="10"></textarea>
+                  <textarea name="" id="message" cols="10" rows="10"></textarea>
                 </div>
                 <div class="my-4">
                   <input type="checkbox" id="newsletter">
@@ -562,41 +551,87 @@
           </div>
         </div>
   
-        <div class=" col-6 d-flex flex-row justify-content-around">
-          <div class=" w-100">
-            <div>
+        <div class="col-sm-12 col-md-5 d-flex flex-column flex-sm-row justify-content-around ">
+          <div class=" w-100 ">
+            <div class=" mt-4 p-md-2  d-flex  flex-column justify-content-around align-items-center">
               <box-icon type='logo' name='whatsapp' size="lg"></box-icon>
-              <p>WHATSAPP</p>
-              <span>some info</span>
-              <a href="#">Nos dê um oi!</a>
+              <p class="fs-2 fw-bold">WHATSAPP</p>
+              <span>Nos dê um oi!</span>
+              
+              <a class="pt-md-3" href="https://wa.me/5553981157066" target="_blank">Entre em contato</a>
             </div>
-            <div>
+            <div class=" mt-4 p-md-2  d-flex flex-column justify-content-around align-items-center">
               <box-icon name='phone' size="lg"></box-icon>
-              <p>CONTATO</p>
-              <span>some info</span>
-              <a href="#">(53) 981157066</a>
+              <p class="fs-2 fw-bold">CONTATO</p>
+              <span class="w-75 text-center">Quer falar com algum dos nossos colaboradores?</span>
+              
+              <a class="pt-md-3" href="#">(53) 981157066</a>
             </div>
           </div>
           
           <div class=" w-100">
-            <div>
+            <div class=" mt-4 p-md-2  d-flex flex-column justify-content-around align-items-center" >
               <box-icon name='map' size="lg" ></box-icon>
-              <p>ENDEREÇO</p>
-              <span>some info</span>
-              <span>Endereço</span>
+              <p class="fs-2 fw-bold">ENDEREÇO</p>
+              <span>Rua fictícia, 432</span>
+              
+              <span class="pt-md-3">Sala 01</span>
             </div>
     
-            <div>
+            <div class=" mt-4 p-md-2  d-flex flex-column justify-content-around align-items-center">
               <box-icon name='watch' type='solid' size="lg"  ></box-icon>
-              <p>HORÁRIO</p>
-              <span>some info</span>
-              <span>Horário</span>
+              <p class="fs-2 fw-bold" >HORÁRIO</p>
+              <div>
+                <span class="fw-bold">Segunda a Sexta: </span>
+                <span>09:00 - 20:00</span>
+              </div>
+              <div class="pt-md-3">
+                <span class="fw-bold">Sábado: </span>
+                <span>09:00 - 12:00</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
     </section>
+
+    <footer>
+      <div class="container ">
+        <div class="row justify-content-between">
+          <p class=" col-sm-12 col-md-3 fs-2 fw-bold mb-5 text-center">LE RESTAURANT</p>
+          <div class="col-sm-12 col-md-7 d-flex justify-content-around align-items-center mb-5 ">
+            <a href="#sobre">SOBRE </a>
+            <a href="#menu">MENU </a>
+            <a href="#avaliacoes"> AVALIAÇÕES</a>
+            <a href="#contato"> CONTATO</a>
+          </div>
+
+          <div class="col-sm-12 col-md-2 d-flex justify-content-around align-items-center mb-5">
+            <box-icon type='logo' name='facebook'></box-icon>
+            <box-icon name='instagram' type='logo' ></box-icon>
+            <box-icon name='spotify' type='logo' ></box-icon>
+      
+          </div>
+        </div>
+      </div  >
+      <div class="container developement-info">
+        <div class="row  align-items-center ">
+
+          <div class="col-sm-12 col-md-6 text-center" >
+            <div>
+              <span class="text-black fs-4">Desenvolvido por </span> <a class="fs-4" target="_blank" href="https://github.com/LucasPeil?tab=repositories">Lucas Peil</a>
+              <box-icon name='github' type='logo' ></box-icon>
+            </div>
+           
+          </div>
+          <div class="col-sm-12 col-md-6 text-center mt-5">
+            <span class="fw-light text-black fs-6">Inspirado no site do restaurante </span><a class="fs-6 pl-2" target="_blank" href="https://en.labarraca.nl"> La Barraca</a>.
+          </div>
+        </div>
+
+      </div>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

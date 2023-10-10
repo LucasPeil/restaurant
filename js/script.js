@@ -1,3 +1,10 @@
+// Import our custom CSS
+//import '../css/style.scss'
+
+
+// Import all of Bootstrap's JS
+//import * as bootstrap from 'bootstrap'
+
 function scrollTrigger(selector) {
   let els = document.querySelectorAll(selector);
 
@@ -108,7 +115,61 @@ const coverSubcontainer = document.querySelector(".cover-subcontainer ")
 setTimeout(() => {
   coverSubcontainer.style.height = "100vh";
   coverSubcontainer.style.opacity = 1;
+}, 400);
+
+
+//open modal
+
+const barButton = document.querySelector("#bar-button")
+const modalMenu = document.querySelector(".modal-menu")
+const overlay = document.querySelector("#overlay")
+function disableWheelScroll(e) {
+  e.preventDefault();
+}
+function disableScroll() {
+  // Get the current page scroll position
+  scrollTop = window.scrollY || document.documentElement.scrollTop;
+  scrollLeft = window.scrollX || document.documentElement.scrollLeft,
+
+      // if any scroll is attempted, set this to the previous value
+      window.onscroll = function() {
+          window.scrollTo(scrollLeft, scrollTop);
+      };
+}
+function enableScroll() {
+  window.onscroll = function() {};
+}
+const openMenuModal = ()=>{
+    overlay.classList.add("overlay")
+    
+  window.onscroll = function() {
+    disableScroll()
+};
+window.addEventListener("wheel", disableWheelScroll, { passive:false })
+
+setTimeout(() => {
+  modalMenu.style.left=0
+ 
 }, 300);
+
+setTimeout(() => {
+  modalMenu.style.display="block"
+ 
+}, 100);
+
+}
+const closeMenuModal = ()=>{
+  window.removeEventListener("wheel", disableWheelScroll);
+ 
+  overlay.classList.remove("overlay")
+  modalMenu.style.left="-1000px"
+  window.onscroll=null
+
+  setTimeout(() => {
+    modalMenu.style.display="none"
+    modalMenu.style.left=-1000
+  }, 300);
+}
 
 
 /*  estrelasMenu[index].setAttribute("type", "solid"); */
